@@ -286,7 +286,7 @@ p {
   top: 50%;
   left: 50%;
 
-  min-width: 528px;
+  width: 528px;
   min-height: 581px;
 
   background-color: #ffffff;
@@ -299,6 +299,7 @@ p {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* -----window-button------------ */
 .window-btn {
   position: absolute;
   top: 8px;
@@ -312,10 +313,22 @@ p {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  outline: rgba(0, 0, 0, 0.1);
 }
 
 .close-window {
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
   fill: rgba(0, 0, 0, 1);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.window-btn:hover .close-window,
+.window-btn:focus .close-window {
+  fill: var(--acent-color);
 }
 
 /* --------------Modal--form------------------- */
@@ -445,7 +458,14 @@ p {
   border-radius: 4px;
   cursor: pointer;
 
-  box-shadow: 0px 4px 4px rgba(63, 54, 54, 0.15);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-btn:hover,
+.modal-form-btn:focus {
+  background-color: #188ce8;
 }
 
 /* ------checkbox--------- */
@@ -918,9 +938,6 @@ p {
 
 /* <!--------footer-form--------> */
 
-.footer-form {
-}
-
 .footer-form-label {
   display: block;
 
@@ -951,8 +968,9 @@ p {
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 
-  color: var(--first-background-color);
+  color: rgba(255, 255, 255, 0.6);
 
   background-color: #2f303a;
 }
@@ -991,6 +1009,7 @@ p {
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border-color: var(--acent-color);
 
   cursor: pointer;
 }
